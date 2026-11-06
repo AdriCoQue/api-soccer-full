@@ -1,0 +1,15 @@
+@let registers = this.registers();
+<div class="title">
+    <h1 class="title-text">Registros de Equipos en Ligas</h1>
+</div>
+<div class="page-content">
+    <div class="buttons">
+        <button class="btn-back" (click)="goToMenu()">Volver al menu</button>
+        <button class="btn-add" (click)="goToNewRegister()">Registrar equipo</button>
+    </div>
+    <div class="registers-container">
+        @for(register of registers; track register){
+            <app-register-card [register]="register" style="width: 20%"/>
+        }
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="title">
+    <h1 class="title-text">Agregar Nueva Liga</h1>
+</div>
+<div class="page-content">
+    <form [formGroup]="leagueForm" (ngSubmit)="onSubmit($event)">
+        <div class="form-group">
+            <label>Nombre de la liga: </label>
+            <input type="text" placeholder="Nombre" class="form-control" formControlName="name"/>
+            @if(leagueForm.get('name')?.hasError('required') && leagueForm.get('name')?.touched){
+                <div class="invalid-feedback">Campo Obligatorio</div>
+            }
+            @if(leagueForm.get('name')?.hasError('minLength') && leagueForm.get('name')?.touched){
+                <div class="invalid-feedback">El nombre es muy corto</div>
+            }
+            @if(leagueForm.get('name')?.hasError('maxLength') && leagueForm.get('name')?.touched){
+                <div class="invalid-feedback">El nombre es muy largo</div>
+            }
+        </div>
+        <div class="form-group">
+            <label>Pais de origen: </label>
+            <input type="text" placeholder="Pais" class="form-control" formControlName="country"/>
+            @if(leagueForm.get('country')?.hasError('required') && leagueForm.get('country')?.touched){
+                <div class="invalid-feedback">Campo Obligatorio</div>
+            }
+            @if(leagueForm.get('country')?.hasError('minLength') && leagueForm.get('country')?.touched){
+                <div class="invalid-feedback">El nombre es muy corto</div>
+            }
+            @if(leagueForm.get('country')?.hasError('maxLength') && leagueForm.get('country')?.touched){
+                <div class="invalid-feedback">El nombre es muy largo</div>
+            }
+        </div>
+        <div class="form-group">
+            <label>Fecha de inicio: </label>
+            <input type="datetime-local" class="form-control" formControlName="startDate"/>
+            @if(leagueForm.get('startDate')?.hasError('required') && leagueForm.get('startDate')?.touched){
+                <div class="invalid-feedback">Campo Obligatorio</div>
+            }
+        </div>
+        <div class="form-group">
+            <label>Fecha de finalizacion: </label>
+            <input type="datetime-local" class="form-control" formControlName="endDate"/>
+            @if(leagueForm.get('endDate')?.hasError('required') && leagueForm.get('endDate')?.touched){
+                <div class="invalid-feedback">Campo Obligatorio</div>
+            }
+        </div>
+        @if(dateError){
+            <div class="invalid-feedback">La fecha de inicio de la liga no puede ocurrir despues de la fecha de finalización</div>
+        }
+        <div class="buttons">
+            <button class="btn-back" (click)="goBack()">Regresar</button>
+            <button class="btn-add" type="submit" >Guardar</button>
+        </div>
+    </form>
+    
+</div>

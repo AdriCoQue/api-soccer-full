@@ -1,0 +1,36 @@
+@let leagues = this.leagues();
+@let teams = this.teams();
+<div class="title">
+    <h1 class="title-text">Registrar Equipo en una Liga</h1>
+</div>
+<div class="page-content">
+    <form [formGroup]="registerForm" (ngSubmit)="OnSubmit($event)">
+        <div class="form-group">
+            <label>Liga: </label>
+            <select class="form-control" formControlName="idleague">
+                @for(league of leagues; track league.idleague){
+                    <option [value]="league.idleague">{{league.name}}</option>
+                }
+            </select>
+            @if(registerForm.get('idleague')?.hasError('required') && registerForm.get('idleague')?.touched){
+                <div class="invalid-feedback">Campo Obligatorio</div>
+            }
+        </div>
+        <div class="form-group">
+            <label>Equipo: </label>
+            <select class="form-control" formControlName="idteam">
+                @for(team of teams; track team.idteam){
+                    <option [value]="team.idteam">{{team.name}}</option>
+                }
+            </select>
+            @if(registerForm.get('idteam')?.hasError('required') && registerForm.get('idteam')?.touched){
+                <div class="invalid-feedback">Campo Obligatorio</div>
+            }
+        </div>
+        <div class="buttons">
+            <button class="btn-back" (click)="goBack()">Regresar</button>
+            <button class="btn-add" type="submit" >Guardar</button>
+        </div>
+    </form>
+    
+</div>

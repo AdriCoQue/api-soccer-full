@@ -1,0 +1,20 @@
+# .NET Core
+**/bin/
+**/obj/
+**/.vs/
+
+# Angular / Node
+**/node_modules/
+**/dist/
+**/.angular/
+
+# Visual Studio
+*.user
+*.suo
+
+# Archivos sensibles
+.env
+.env.*
+
+# Excepciones para plantillas de entorno
+!.env.example

@@ -1,0 +1,15 @@
+@let teams = this.teams();
+<div class="title">
+    <h1 class="title-text">Equipos</h1>
+</div>
+<div class="page-content">
+    <div class="buttons">
+        <button class="btn-back" (click)="goToMenu()">Volver al menu</button>
+        <button class="btn-add" (click)="goToNewTeam()">Agregar equipo</button>
+    </div>
+    <div class="teams-container">
+        @for(team of teams; track team.idteam){
+            <app-team-card [team]="team" style="width: 20%"/>
+        }
+    </div>
+</div>

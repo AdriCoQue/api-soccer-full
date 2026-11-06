@@ -1,0 +1,10 @@
+@let cardLeague = league();
+<div class="card">
+    <p class="name">{{cardLeague.name}}</p>
+    <p class="country">{{cardLeague.country}}</p>
+    <p class="date"><b>Inicio: </b>{{cardLeague.startDate}}</p>
+    <p class="date"><b>Fin: </b>{{cardLeague.endDate}}</p>
+    <p class="team-number"><b>Equipos inscritos: </b>{{cardLeague.teamsRegistered}}</p>
+    <button class="btn-edit" (click)="editLeague()">Editar</button>
+    <button class="btn-delete" (click)="deleteLeague()">Borrar</button>
+</div>

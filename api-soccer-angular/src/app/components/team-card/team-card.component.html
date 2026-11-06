@@ -1,0 +1,8 @@
+@let equipo = team();
+<div class="card">
+    <p class="name">{{equipo.name}}</p>
+    <p class="country">{{equipo.country}}</p>
+    <p class="player-number"><b>Jugadores inscritos: </b>{{equipo.playersQuantity}}<p>
+    <button class="btn-edit" (click)="editTeam()">Editar</button>
+    <button class="btn-delete" (click)="deleteTeam()">Borrar</button>
+</div>

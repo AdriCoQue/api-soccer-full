@@ -1,0 +1,7 @@
+@let registro = register();
+<div class="card">
+    <p class="card-title">Registro de Equipo</p>
+    <p class="league-name"><b>Liga: </b>{{registro.leagueName}}</p>
+    <p class="team-name"><b>Equipo: </b>{{registro.teamName}}</p>
+    <button class="btn-delete" (click)="deleteRegister()">Borrar</button>
+</div>

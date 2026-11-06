@@ -1,0 +1,51 @@
+.card{
+    width: 92%;
+    margin: 2% 1%;
+    align-items: center;
+    border-radius: 2vw;
+    padding-bottom: 1%;
+    background-color: white;
+    border: 1px black solid;
+}
+.name{
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    width: 90%;
+    margin: 5%;
+}
+.country{
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 3%;
+    width: 94%;
+}
+.player-number{
+    text-align: center;
+    font-size: 1rem;
+    margin: 3%;
+    width: 94%;
+}
+.btn-edit{
+    padding: 2%;
+    color: black;
+    background-color: lightgray;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: solid 1px black;
+    width: 80%;
+    margin: 1% 10%;
+}
+.btn-delete{
+    width: 80%;
+    margin: 1% 10%;
+    padding: 2%;
+    color: black;
+    background-color: red;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: solid 1px black;
+    color: white;
+}

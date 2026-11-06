@@ -1,0 +1,15 @@
+@let leagues = this.leagues();
+<div class="title">
+    <h1 class="title-text">Ligas de Futbol</h1>
+</div>
+<div class="page-content">
+    <div class="buttons">
+        <button class="btn-back" (click)="goToMenu()">Volver al menu</button>
+        <button class="btn-add" (click)="goToNewLeague()">Agregar liga</button>
+    </div>
+    <div class="leagues-container">
+        @for(league of leagues; track league.idleague){
+            <app-league-card [league]="league" style="width: 20%"/>
+        }
+    </div>
+</div>
